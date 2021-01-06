@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.obox {
+				width: 100vw;
+				height: 100vh;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			.hd {
+				width: 100%;
+				height: 25%;
+				position: relative;
+			}
+			
+			.hd img {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.hd .s1 {
+				display: block;
+				position: absolute;
+				left: 30%;
+				top: 85%;
+				margin-left: -48px;
+				color: orange;
+			}
+			
+			.hd .s2 {
+				display: block;
+				position: absolute;
+				left: 70%;
+				margin-left: -32px;
+				top: 85%;
+				color: orange;
+			}
+			
+			.box1 {
+				width: 100%;
+				height: 75%;
+				position: relative;
+			}
+			
+			.box1 .img1 {
+				display: block;
+				width: 100%;
+				height: 60%;
+			}
+			
+			.box1 .img2 {
+				display: block;
+				width: 100%;
+				height: 40%;
+			}
+			
+			.box1 .img3 {
+				display: block;
+				position: absolute;
+				top: 57%;
+				left: 12%;
+				width: 78%;
+				height: 54px;
+			}
+			
+			.box1 .img4 {
+				display: block;
+				position: absolute;
+				bottom: 3%;
+				left: 12%;
+				width: 78%;
+				height: 54px;
+				display: none;
+			}
+			
+			.prize {
+				display: block;
+				position: absolute;
+				top: 57%;
+				left: 12%;
+				width: 76%;
+				height: 10%;
+				line-height: 54px;
+				color: orange;
+				font-size: 1.3em;
+				text-align: center;
+			}
+			
+			.list {
+				border: solid 3px red;
+				width: 70vw;
+				height: 70vw;
+				background: white;
+				position: absolute;
+				top: 5px;
+				left: 15vw;
+			}
+			
+			.list li {
+				width: 28%;
+				margin: 2% 1% 1% 2%;
+				float: left;
+				border: solid 2px white;
+				list-style: none;
+			}
+			
+			.list li:first-child {
+				border: solid 2px red;
+			}
+			
+			.list img {
+				width: 100%;
+				display: block;
+			}
+			
+			.box2 {
+				width: 90%;
+				height: 120px;
+				border: solid 3px red;
+				background: white;
+				position: absolute;
+				top: 70%;
+				left: 5%;
+				overflow: hidden;
+			}
+			
+			.h1 {
+				color: red;
+				font-size: 24px;
+				text-indent: 12px;
+				display: block;
+				position: absolute;
+				top: 70%;
+				left: 6%;
+				width: 90%;
+				height: 36px;
+				line-height: 36px;
+				z-index: 10;
+				background: white;
+			}
+			
+			.box2-con {
+				width: 100%;
+				height: 200%;
+				position: absolute;
+				top: 30%;
+				left: 0;
+				font-size: 16px;
+				text-indent: 32px;
+			}
+			
+			.box2-con p {
+				line-height: 24px;
+			}
+			
+			.shadow {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0, 0.6);
+				z-index: 11;
+				display: none;
+			}
+			
+			.rule {
+				width: 80%;
+				height: 300px;
+				border-radius: 10px 10px 0 0;
+				background: white;
+				position: absolute;
+				top: 26%;
+				left: 10%;
+				overflow: auto;
+				z-index: 12;
+				display: none;
+			}
+			
+			.rule p {
+				margin-bottom: 10px;
+				margin-left: 5px;
+			}
+			
+			.rule h3 {
+				text-align: center;
+				margin: 10px;
+			}
+			
+			.timesout {
+				width: 80%;
+				height: 100px;
+				border-radius: 10px 10px 0 0;
+				background: white;
+				position: absolute;
+				top: 33%;
+				left: 10%;
+				overflow: auto;
+				z-index: 12;
+				display: none;
+			}
+			
+			.timesout h3 {
+				text-align: center;
+				margin: 5px;
+			}
+			
+			.timesout p {
+				margin-bottom: 0px;
+				margin-top: 20px;
+				color: red;
+				text-align: center;
+			}
+			
+			.winbox {
+				width: 80%;
+				height: 300px;
+				border-radius: 10px 10px 0 0;
+				background: white;
+				position: absolute;
+				top: 15%;
+				left: 10%;
+				overflow: auto;
+				z-index: 12;
+				display: none;
+			}
+			
+			.winbox h3 {
+				text-align: center;
+				margin: 5px;
+			}
+			
+			.winbox p {
+				margin-bottom: 0px;
+				margin-left: 5px;
+				color: black;
+				text-align: center;
+				font-size: 20px;
+			}
+			
+			.winp {
+				color: red!important;
+			}
+			
+			.winimgbox {
+				width: 80%;
+				height: 50px;
+				border: solid 1px black;
+				margin: 5px auto;
+			}
+			
+			.winimg {
+				height: 50px;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			.confirmbox {
+				width: 80%;
+				height: 32px;
+				background: white;
+				position: fixed;
+				top: 26%;
+				left: 10%;
+				margin-top: 300px;
+				overflow: hidden;
+				border-radius: 0 0 10px 10px;
+				border-top: solid 1px black;
+			}
+			
+			.confirmbox h3 {
+				display: block;
+				width: 70px;
+				height: 30px;
+				font-size: 24px;
+				line-height: 30px;
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				margin-left: -37px;
+			}
+			
+			.confirmbox1 {
+				width: 80%;
+				height: 48px;
+				background: white;
+				position: fixed;
+				top: 33%;
+				left: 10%;
+				margin-top: 100px;
+				overflow: hidden;
+				border-radius: 0 0 10px 10px;
+				border-top: solid 1px black;
+			}
+			
+			.confirmbox1 h3 {
+				display: block;
+				width: 70px;
+				height: 48px;
+				font-size: 16px;
+				line-height: 48px;
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				margin-left: -37px;
+			}
+			
+			.confirmbox2 {
+				width: 80%;
+				height: 32px;
+				background: white;
+				position: fixed;
+				top: 15%;
+				left: 10%;
+				margin-top: 300px;
+				overflow: hidden;
+				border-radius: 0 0 10px 10px;
+				border-top: solid 1px black;
+			}
+			
+			.confirmbox2 h3 {
+				display: block;
+				width: 70px;
+				height: 30px;
+				font-size: 16px;
+				line-height: 30px;
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				margin-left: -37px;
+			}
+			
+			.continue {
+				display: block;
+				position: absolute;
+				bottom: 3%;
+				left: 12%;
+				width: 76%;
+				height: 54px;
+				line-height: 54px;
+				color: orange;
+				font-size: 1.3em;
+				text-align: center;
+				display: none;
+			}
+			
+			.box3 {
+				width: 90%;
+				min-height: 350px;
+				position: absolute;
+				top: 0%;
+				left: 5%;
+				border: solid 3px red;
+				background: white;
+				text-align: center;
+				padding: 10px 0;
+				display: none;
+			}
+			
+			.prizeimgbox {
+				width: 90%;
+				height: 80px;
+				border: solid 1px black;
+				margin: 5px auto;
+			}
+			
+			.prizeimg {
+				height: 80px;
+				display: block;
+				margin: 0px auto;
+			}
+			
+			.box3 p {
+				text-align: left;
+				text-indent: 10px;
+				margin: 10px 0;
+				font-size: 16px;
+			}
+			
+			.redeem {
+				width: 90%;
+				height: 50px;
+				background: red;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			.redeem h3 {
+				height: 50px;
+				line-height: 50px;
+				font-size: 24px;
+				color: gold;
+			}
+			
+			.item {
+				margin-bottom: 30px;
+				display: none;
+			}
+			
+			.redeempw {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				height: 50px;
+				width: 300px;
+				margin-left: -150px;
+				margin-top: -25px;
+				z-index: 13;
+				display: none;
+			}
+			
+			.redeempw .inp1 {
+				height: 50px;
+				width: 235px;
+			}
+			
+			.redeempw .inp2 {
+				height: 50px;
+				width: 60px;
+			}
+			
+			.redeemp1 {
+				color: red;
+				display: none;
+			}
+			
+			.item .prizep3 {
+				display: none;
+			}
+			
+			.info {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				height: 130px;
+				width: 300px;
+				margin-left: -150px;
+				margin-top: -65px;
+				z-index: 13;
+				display: none;
+			}
+			
+			.info input {
+				width: 100%;
+				height: 50px;
+				margin: 5px 0;
+			}
+			
+			.info p {
+				color: red;
+				text-align: center;
+				display: none;
+			}
+		</style>
+		<script src="../day33/js/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var top1 = 30; //轮播初始top
+				var times = 3; //抽奖次数
+				var Timer;
+				var step = 1; //当前步数
+				var item = 0; //中奖次数
+				//轮播
+				setInterval(function() {
+					top1--;
+					if(top1 == -230) {
+						top1 = 30;
+					}
+					$(".box2-con").css("top", (top1 + "%"));
+				}, 50);
+				//规则
+				$(".s2").click(function() {
+					$(".shadow").toggle();
+					$(".rule").toggle();
+				})
+				//我的奖品
+				var login = 0; //是否登录账号
+				function prizebtn() {
+					$(".list").hide();
+					$(".box2").hide();
+					$(".h1").hide();
+					$(".prize").hide();
+					$(".img3").hide();
+					$(".img4").show();
+					$(".box3").show();
+					$(".s1").hide();
+					$(".s2").css("left", "50%");
+					$(".continue").show();
+					if(item == 0) {
+						$(".box1").css("height", "75%");
+						$(".shadow").css("height", "100%");
+					} else {
+						if(item == 1) {
+							$(".box1").css("height", "105%");
+							$(".shadow").css("height", "130%");
+						} else {
+							if(item == 2) {
+								$(".box1").css("height", "135%");
+								$(".shadow").css("height", "160%");
+							} else {
+								$(".box1").css("height", "165%");
+								$(".shadow").css("height", "190%");
+							}
+						}
+					}
+				}
+				$(".prize").click(function() {
+					if(isclick == 1) {
+						//正在抽奖
+
+					} else { //未在抽奖												
+						if(login == 1) { //已登录
+							prizebtn();
+						} else {
+							//未登录
+							$(".shadow").toggle();
+							$(".info").toggle();
+							$(".shadow").click(function() {
+								$(".shadow").hide();
+								$(".info").hide();
+								$(".info p").hide();
+								$(".username").val("");
+								$(".userphone").val("");
+							})
+							//手机号正则表达式
+							var tel = /^(13[0-9]|14[01456879]|15[0-3,5-9]|16[2567]|17[0-8]|18[0-9]|19[0-3,5-9])\d{8}$/;
+							$(".info-btn").click(function() {
+								if($(".username").val() != "" && tel.test($(".userphone").val())) {
+									login = 1;
+									$(".shadow").hide();
+									$(".info").hide();
+									prizebtn();
+								} else {
+									if($(".username").val() == "") {
+										$(".info p").eq(1).show();
+									}
+									if(!tel.test($(".userphone").val())) {
+										$(".info p").eq(0).show();
+									}
+								}
+							})
+							$(".userphone").focus(function() {
+								$(".info p").eq(0).hide();
+								$(".userphone").val("");
+							})
+							$(".username").focus(function() {
+								$(".info p").eq(1).hide();
+								$(".username").val("");
+							})
+						}
+					}
+				})
+				//继续抽奖
+				$(".continue").click(function() {
+					$(".list").show();
+					$(".box2").show();
+					$(".h1").show();
+					$(".prize").show();
+					$(".img3").show();
+					$(".img4").hide();
+					$(".box3").hide();
+					$(".s1").show();
+					$(".s2").css("left", "70%");
+					$(".continue").hide();
+					$(".box1").css("height", "75%");
+				})
+				//规则确认
+				$(".confirm").click(function() {
+					$(".shadow").toggle();
+					$(".rule").toggle();
+				})
+				//抽奖次数用完确认
+				$(".confirm1").click(function() {
+					$(".shadow").toggle();
+					$(".timesout").toggle();
+				})
+				//中奖确认
+				$(".confirm2").click(function() {
+					$(".shadow").toggle();
+					$(".winbox").toggle();
+				})
+				//兑奖
+				function reedeem(index, password) {
+					$(".redeem").eq(index).click(function() {
+						$(".shadow").show();
+						$(".redeempw").show();
+						$(".inp1").val("");
+						$(".shadow").click(function() {
+							$(".shadow").hide();
+							$(".redeempw").hide();
+							$(".redeemp1").css("display", "none");
+						})
+						$(".inp2").click(function() {
+							if($(".inp1").val() == password) {
+								var date = new Date();
+								var now = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+								$(".shadow").hide();
+								$(".redeempw").hide();
+								$(".redeem").eq(index).find("h3").html("已兑奖");
+								$(".redeem").eq(index).siblings(".prizep3").show();
+								$(".redeem").eq(index).siblings(".prizep3").html("兑奖时间: " + now);
+								$(".redeem").eq(index).css("pointer-events", "none")//移除点击事件
+							} else {
+								$(".redeemp1").show();
+							}
+						})
+						$(".inp1").focus(function() {
+							$(".redeemp1").hide();
+							$(".inp1").val("");
+						})
+					})
+				}
+				reedeem(0, 1234);
+				reedeem(1, 12345);
+				reedeem(2, 123456);
+
+				//控制点击
+				var isclick = 0;
+				//开始抽奖
+				$(".start").click(function() {
+					//点了抽奖
+					if(isclick == 1) {
+
+					} else {
+						//次数用完
+						if(times <= 0) {
+							times = 0;
+							$(".times").html(times);
+							$(".shadow").toggle();
+							$(".timesout").toggle();
+						} else {
+							isclick = 1;
+							times--;
+							$(".times").html(times);
+							var round = Math.floor(Math.random() * 3 + 3); //圈数
+							var target = Math.floor(Math.random() * 8 + 1); //抽中目标
+							Timer = setInterval(function() {
+								step++;
+								if(step > 8) {
+									step = 1;
+									round--;
+								}
+								for(var i = 1; i <= $(".list li").length; i++) {
+									$(".list li").eq(i - 1).css("border", "solid 2px white");
+									if($(".list li").eq(i - 1).attr("steps") == step) {
+										$(".list li").eq(i - 1).css("border", "solid 2px red");
+									}
+								}
+								if(round == 0) {
+									if(step == target) {
+										clearInterval(Timer);
+										var date = new Date();
+										var now = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+										isclick = 0;
+										if(target != 8) {
+											//中奖
+
+											item++;
+											//控制显示奖品数量
+											if(item == 1) {
+												$(".item1").css("display", "block");
+											} else {
+												if(item == 2) {
+													$(".item1").css("display", "block");
+													$(".item2").css("display", "block");
+												} else {
+													$(".item1").css("display", "block");
+													$(".item2").css("display", "block");
+													$(".item3").css("display", "block");
+												}
+											}
+
+											//抽中奖品,显示相应信息
+											switch(target) {
+												case 1: //黄封村人参酒两瓶 120 元
+													$(".winimg").prop("src", "img/黄封村人参酒两瓶.jpg");
+													$(".winp1").html("黄封村人参酒两瓶");
+													$(".winp2").html("120 元");
+													$(".winp3").html("兑奖地址：吉林省酒文化博物馆（亚泰大街9699号）");
+													$(".winp4").html("联系电话：0431-88508899");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													//第几个奖品修改相应信息,下同
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + "中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + "中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 2: // 莱沃口腔储值卡 200
+													$(".winimg").prop("src", "img/莱沃口腔储值卡.jpg");
+													$(".winp1").html("莱沃口腔储值卡");
+													$(".winp2").html("200 元");
+													$(".winp3").html("兑奖地址：工农大路1780号（省中医院东侧）");
+													$(".winp4").html("注：洗牙4次（不限本人使用）；口腔体检；");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 3: //中国联通流量卡 50
+													$(".winimg").prop("src", "img/中国联通流量卡.jpg");
+													$(".winp1").html("中国联通流量卡");
+													$(".winp2").html("50 元");
+													$(".winp3").html("兑奖地址：长春市内联通营业厅登记统一存入");
+													$(".winp4").html("注：2G/3G用户500M流量；4G用户1G流量;异地号码，非正常在用号码、已有相同流量包、融合套餐等不能使用");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 4: //S5健身俱乐部贵宾卡 100
+													$(".winimg").prop("src", "img/S5健身俱乐部贵宾卡.png");
+													$(".winp1").html("S5健身俱乐部贵宾卡");
+													$(".winp2").html("100 元");
+													$(".winp3").html("兑奖地址：1.南关区幸福街与蔚山路交会处绿地中央广场盘古家宴旁2.高新区荷园路与华光街交会处东行50米安联国际3.绿园区景阳大路与春城大街交会处北行150米 ");
+													$(".winp4").html("注：3店通用；单天无时间限制，器材限制使用；");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 5: //圣雅瑜伽SPA会所储值卡 2000
+													$(".winimg").prop("src", "img/圣雅瑜伽SPA会所储值卡.jpg");
+													$(".winp1").html("圣雅瑜伽SPA会所储值卡");
+													$(".winp2").html("2000 元");
+													$(".winp3").html("兑奖地址：飞跃东路林田创客公园D栋2楼彩练新闻");
+													$(".winp4").html("注：每人限用1张；不含服装、垫子等费用；");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 6: //陶进二胡工作室 300
+													$(".winimg").prop("src", "img/陶进二胡工作室.jpg");
+													$(".winp1").html("陶进二胡工作室");
+													$(".winp2").html("300 元");
+													$(".winp3").html("兑奖地址：飞跃东路林田创客公园D栋2楼彩练新闻");
+													$(".winp4").html("注：学习二胡免一次课时费；");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												case 7: //蛋壳科技VR体验卡 50
+													$(".winimg").prop("src", "img/蛋壳科技VR体验卡.png");
+													$(".winp1").html("蛋壳科技VR体验卡");
+													$(".winp2").html("50 元");
+													$(".winp3").html("兑奖地址：同志街与同光路交会处联通营业厅；联通营业厅前进大街店；");
+													$(".winp4").html("注意：VR互动实战体验一次");
+													$(".shadow").toggle();
+													$(".winbox").toggle();
+													if(item == 1) {
+														$(".item1 .prizeimg").prop("src", $(".winimg").prop("src"));
+														$(".item1 .prizep1").html("奖品:" + $(".winp1").html());
+														$(".item1 .prizep2").html("中奖时间:" + now);
+														$(".item1 .prizep4").html($(".winp3").html());
+														$(".item1 .prizep5").html("联系电话：0431-88508899");
+
+													} else {
+														if(item == 2) {
+															$(".item2 .prizeimg").prop("src", $(".winimg").prop("src"));
+															$(".item2 .prizep1").html("奖品:" + $(".winp1").html());
+															$(".item2 .prizep2").html("中奖时间:" + now);
+															$(".item2 .prizep4").html($(".winp3").html());
+															$(".item2 .prizep5").html("联系电话：0431-88508899");
+														} else {
+															if(item == 3) {
+																$(".item3 .prizeimg").prop("src", $(".winimg").prop("src"));
+																$(".item3 .prizep1").html("奖品:" + $(".winp1").html());
+																$(".item3 .prizep2").html("中奖时间:" + now);
+																$(".item3 .prizep4").html($(".winp3").html());
+																$(".item3 .prizep5").html("联系电话：0431-88508899");
+															}
+														}
+													}
+													break;
+												default:
+													break;
+											}
+										}
+									}
+								}
+							}, 100);
+						}
+					}
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="obox">
+			<!--遮罩层-->
+			<div class="shadow"></div>
+			<!--规则-->
+			<div class="rule">
+				<h3>游戏规则</h3>
+				<p>1. 每名客户每天抽奖有3次机会，点击转盘的【开始抽奖】按钮进行抽奖，转动结束停留的位置就是您获得的奖品；</p>
+				<p>2. 中奖后需填写姓名、电话，兑奖时根据您的填写的信息进行现场兑奖，具体奖项如下：</p>
+				<p>黄封村人参酒两瓶：共100份，总价值12000元 </p>
+				<p>莱沃口腔储值卡：共50份，总价值10000元 </p>
+				<p>中国联通流量卡：共200份，总价值10000元 </p>
+				<p>S5健身俱乐部贵宾卡：共有80份，总价值8000元 </p>
+				<p>圣雅瑜伽SPA会所储值卡：共3份，总价值6000元 </p>
+				<p>陶进二胡工作室：共20份，总价值6000元 </p>
+				<p>蛋壳科技VR体验卡：共50份，总价值2500元</p>
+				<p>3. 抽奖时间： 2021年1月1日~3日游戏时间：每天10：00~23：59：59</p>
+				<p>4. 各奖品兑奖方式及时间不同，具体如下：</p>
+				<p> 1) 黄封村人参酒 兑奖时间：截止到2021年2月26日</p>
+				<p> 兑奖地址：吉林省酒文化博物馆（亚泰大街9699号） 联系电话：0431-88508899 </p>
+				<p>2) 莱沃口腔储值卡 兑奖时间：截止到2021年2月31日 兑奖地址：工农大路1780号（省中医院东侧） 联系电话：0431—89545888 注：洗牙4次（不限本人使用）；口腔体检； </p>
+				<p>3) 中国联通流量卡 兑奖时间：截止到2021年3月1日 兑奖地址：长春市内联通营业厅登记统一存入 联系电话：无 注：2G/3G用户500M流量；4G用户1G流量;异地号码，非正常在用号码、已有相同流量包、融合套餐等不能使用 </p>
+				<p>4) S5健身俱乐部贵宾卡 兑奖时间：截止到2021年4月30日 兑奖地址： 南关区幸福街与蔚山路交会处绿地中央广场盘古家宴旁 高新区荷园路与华光街交会处东行50米安联国际 绿园区景阳大路与春城大街交会处北行150米 联系电话： 0431—81887555； 0431—80811555； 0431—88006122 注：3店通用；单天无时间限制，器材限制使用； </p>
+				<p>5) 圣雅瑜伽SPA会所储值卡 兑奖时间：截止到2021年7月1日 兑奖地址：飞跃东路林田创客公园D栋2楼彩练新闻 联系电话：13943017772 注：每人限用1张；不含服装、垫子等费用； </p>
+				<p>6) 陶进二胡工作室 兑奖时间：截止到2021年12月31日 兑奖地址：飞跃东路林田创客公园D栋2楼彩练新闻 联系电话：13943017772 注：学习二胡免一次课时费； </p>
+				<p>7) 蛋壳科技VR体验卡 兑奖时间：截止到2021年7月1日 兑奖地址： 同志街与同光路交会处联通营业厅； 联通营业厅前进大街店； 联系电话：无 注意：VR互动实战体验一次 活动最终解释权归彩练新闻所有。</p>
+				<div class="confirmbox">
+					<h3 class="confirm">确定</h3>
+				</div>
+			</div>
+			<!--次数用完-->
+			<div class="timesout">
+				<h3>提示</h3>
+				<p>抽奖次数已用完,请下次再来!</p>
+				<div class="confirmbox1">
+					<h3 class="confirm1">确定</h3>
+				</div>
+			</div>
+
+			<!--中奖-->
+			<div class="winbox">
+				<h3>提示</h3>
+				<p class="winp">恭喜您,中奖了!</p>
+				<div class="winimgbox"><img class="winimg" src="img/联通.jpg" /></div>
+				<p class="winp1">中国联通流量卡</p>
+				<p class="winp2">50元</p>
+				<p class="winp3">兑奖地址：长春市内联通营业厅登记统一存入</p>
+				<p class="winp4">注：2G/3G用户500M流量；4G用户1G流量;异地号码，非正常在用号码、已有相同流量包、融合套餐等不能使用</p>
+				<div class="confirmbox2">
+					<h3 class="confirm2">确定</h3>
+				</div>
+			</div>
+
+			<!--兑奖-->
+			<div class="redeempw">
+				<input class="inp1" type="text" placeholder="请输入兑奖码" /><input class="inp2" type="submit" value="提交" />
+				<p class="redeemp1">密码有误!</p>
+			</div>
+
+			<!--手机号码,名字-->
+			<div class="info">
+				<input type="text" name="username" class="username" placeholder="请输入姓名" />
+				<input type="text" name="userphone" class="userphone" placeholder="请输入手机号码" />
+				<input type="submit" value="确认" class="info-btn" />
+				<p>手机号有误</p>
+				<p>请输入姓名</p>
+			</div>
+
+			<div class="hd">
+				<img src="img/九宫格_02.jpg" />
+				<span class="s1">抽奖次数: <span class="times">3</span> 次 </span>
+				<span class="s2">游戏规则</span>
+			</div>
+			<div class="box1">
+				<img class="img1" src="img/九宫格_03.jpg" />
+				<img class="img2" src="img/九宫格_05.jpg" />
+				<img class="img3" src="img/我的奖品.png" />
+				<img class="img4" src="img/我的奖品.png" />
+				<span class="prize">我的奖品</span>
+				<ul class="list">
+					<li steps="1"><img src="img/sudoku_01.jpg" /></li>
+					<li steps="2"><img src="img/sudoku_02.jpg" /></li>
+					<li steps="3"><img src="img/sudoku_03.jpg" /></li>
+					<li steps="8"><img src="img/sudoku_09.jpg" /></li>
+					<li class="start"><img src="img/sudoku_05.jpg" /></li>
+					<li steps="4"><img src="img/sudoku_04.jpg" /></li>
+					<li steps="7"><img src="img/sudoku_08.jpg" /></li>
+					<li steps="6"><img src="img/sudoku_07.jpg" /></li>
+					<li steps="5"><img src="img/sudoku_06.jpg" /></li>
+				</ul>
+				<h3 class="h1">已发出的奖品:</h3>
+				<div class="box2">
+					<div class="box2-con">
+						<p>152****1234 获得中国联通流量卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得陶进二胡工作室</p>
+						<p>152****1234 获得中国联通流量卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得陶进二胡工作室</p>
+						<p>152****1234 获得中国联通流量卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得陶进二胡工作室</p>
+						<p>152****1234 获得中国联通流量卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得蛋壳科技VR体验卡</p>
+						<p>152****1234 获得陶进二胡工作室</p>
+					</div>
+				</div>
+				<span class="continue">继续抽奖</span>
+				<div class="box3">
+					<h2>我的奖品</h2>
+					<div class="item item1">
+						<div class="prizeimgbox">
+							<img class="prizeimg" src="img/S5健身俱乐部贵宾卡.png" />
+						</div>
+						<p class="prizep1">奖品:XXXXXXXX</p>
+						<p class="prizep2">中奖时间:XXXXXXXX</p>
+						<p class="prizep3">兑奖时间:XXXXXXXX</p>
+						<p class="prizep4">兑奖地址:XXXXXXXXXX</p>
+						<p class="prizep5">联系电话:XXXXXXXXXX</p>
+						<div class="redeem">
+							<h3>立即兑奖</h3>
+						</div>
+					</div>
+					<div class="item item2">
+						<div class="prizeimgbox">
+							<img class="prizeimg" src="img/S5健身俱乐部贵宾卡.png" />
+						</div>
+						<p class="prizep1">奖品:XXXXXXXX</p>
+						<p class="prizep2">中奖时间:XXXXXXXX</p>
+						<p class="prizep3">兑奖时间:XXXXXXXX</p>
+						<p class="prizep4">兑奖地址:XXXXXXXXXX</p>
+						<p class="prizep5">联系电话:XXXXXXXXXX</p>
+						<div class="redeem">
+							<h3>立即兑奖</h3>
+						</div>
+					</div>
+					<div class="item item3">
+						<div class="prizeimgbox">
+							<img class="prizeimg" src="img/S5健身俱乐部贵宾卡.png" />
+						</div>
+						<p class="prizep1">奖品:XXXXXXXX</p>
+						<p class="prizep2">中奖时间:XXXXXXXX</p>
+						<p class="prizep3">兑奖时间:XXXXXXXX</p>
+						<p class="prizep4">兑奖地址:XXXXXXXXXX</p>
+						<p class="prizep5">联系电话:XXXXXXXXXX</p>
+						<div class="redeem">
+							<h3>立即兑奖</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
